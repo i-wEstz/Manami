@@ -1,0 +1,26 @@
+// Utilities Classes
+.uppercase {
+	text-transform: uppercase;
+}
+.hidden {
+	display: none;
+}
+.nopadding {
+	padding: 0;
+}
+.fillscreen {
+	box-sizing: border-box;
+	@media all and (min-width: 64em) {
+		min-height: 100vh;
+	}
+}
+
+// Clearfix
+.clearfix {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}

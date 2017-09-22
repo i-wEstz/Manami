@@ -1,0 +1,251 @@
+$columns: 12 !default;
+$outer_spacing: 1rem !default;
+$column_gutter: 1rem !default;
+
+.container,
+.container-fluid {
+	margin: 0 auto;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: 0 $outer_spacing;
+	@include mq( $until: tablet ) {
+		padding: 0 ($outer_spacing / 2);
+	}
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 (-$column_gutter);
+}
+.row.reverse {
+  flex-direction: row-reverse;
+}
+.col.reverse {
+  flex-direction: column-reverse;
+}
+
+[class*='col-'] {
+	box-sizing: border-box;
+	flex: auto;
+	padding: 0 $column_gutter;
+}
+
+.col-xs,
+.col-sm,
+.col-md,
+.col-lg, {
+	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
+}
+
+@include mq( $from: 0px ) {
+	$breakpoint_prefix: 'xs';
+	.container {
+		width: auto;
+	}
+	@for $i from 1 through $columns {
+		.col-#{$breakpoint_prefix}-#{$i} {
+			flex-basis: ( ( 100% / $columns ) * $i );
+			max-width: ( ( 100% / $columns ) * $i );
+		}
+	}
+	@for $i from 0 through $columns {
+		.col-#{$breakpoint_prefix}-offset-#{$i} {
+			margin-left: ( ( 100% / $columns ) * $i );
+		}
+	}
+	.start-#{$breakpoint_prefix} {
+		justify-content: flex-start;
+		text-align: start;
+	}
+	.center-#{$breakpoint_prefix} {
+		justify-content: center;
+		text-align: center;
+	}
+	.end-#{$breakpoint_prefix} {
+		justify-content: flex-end;
+		text-align: end;
+	}
+	.top-#{$breakpoint_prefix} {
+		align-items: flex-start;
+	}
+	.middle-#{$breakpoint_prefix} {
+		align-items: center;
+	}
+	.bottom-#{$breakpoint_prefix} {
+		align-items: flex-end;
+	}
+	.around-#{$breakpoint_prefix} {
+		justify-content: space-around;
+	}
+	.between-#{$breakpoint_prefix} {
+		justify-content: space-between;
+	}
+	.first-#{$breakpoint_prefix} {
+		order: -1;
+	}
+	.last-#{$breakpoint_prefix} {
+		order: 1;
+	}
+}
+
+@include mq( $from: tablet ) {
+	$breakpoint_prefix: 'sm';
+	$breakpoint_width: mq-get-breakpoint-width( tablet );
+	.container {
+		width: $breakpoint_width;
+	}
+	@for $i from 1 through $columns {
+		.col-#{$breakpoint_prefix}-#{$i} {
+			flex-basis: ( ( 100% / $columns ) * $i );
+			max-width: ( ( 100% / $columns ) * $i );
+		}
+	}
+	@for $i from 0 through $columns {
+		.col-#{$breakpoint_prefix}-offset-#{$i} {
+			margin-left: ( ( 100% / $columns ) * $i );
+		}
+	}
+	.start-#{$breakpoint_prefix} {
+		justify-content: flex-start;
+		text-align: start;
+	}
+	.center-#{$breakpoint_prefix} {
+		justify-content: center;
+		text-align: center;
+	}
+	.end-#{$breakpoint_prefix} {
+		justify-content: flex-end;
+		text-align: end;
+	}
+	.top-#{$breakpoint_prefix} {
+		align-items: flex-start;
+	}
+	.middle-#{$breakpoint_prefix} {
+		align-items: center;
+	}
+	.bottom-#{$breakpoint_prefix} {
+		align-items: flex-end;
+	}
+	.around-#{$breakpoint_prefix} {
+		justify-content: space-around;
+	}
+	.between-#{$breakpoint_prefix} {
+		justify-content: space-between;
+	}
+	.first-#{$breakpoint_prefix} {
+		order: -1;
+	}
+	.last-#{$breakpoint_prefix} {
+		order: 1;
+	}
+}
+
+@include mq( $from: desktop ) {	
+	$breakpoint_prefix: 'md';
+	$breakpoint_width: mq-get-breakpoint-width( desktop );
+	.container {
+		width: $breakpoint_width;
+	}
+	@for $i from 1 through $columns {
+		.col-#{$breakpoint_prefix}-#{$i} {
+			flex-basis: ( ( 100% / $columns ) * $i );
+			max-width: ( ( 100% / $columns ) * $i );
+		}
+	}
+	@for $i from 0 through $columns {
+		.col-#{$breakpoint_prefix}-offset-#{$i} {
+			margin-left: ( ( 100% / $columns ) * $i );
+		}
+	}
+	.start-#{$breakpoint_prefix} {
+		justify-content: flex-start;
+		text-align: start;
+	}
+	.center-#{$breakpoint_prefix} {
+		justify-content: center;
+		text-align: center;
+	}
+	.end-#{$breakpoint_prefix} {
+		justify-content: flex-end;
+		text-align: end;
+	}
+	.top-#{$breakpoint_prefix} {
+		align-items: flex-start;
+	}
+	.middle-#{$breakpoint_prefix} {
+		align-items: center;
+	}
+	.bottom-#{$breakpoint_prefix} {
+		align-items: flex-end;
+	}
+	.around-#{$breakpoint_prefix} {
+		justify-content: space-around;
+	}
+	.between-#{$breakpoint_prefix} {
+		justify-content: space-between;
+	}
+	.first-#{$breakpoint_prefix} {
+		order: -1;
+	}
+	.last-#{$breakpoint_prefix} {
+		order: 1;
+	}
+}
+
+@include mq( $from: wide ) {
+	$breakpoint_prefix: 'lg';
+	$breakpoint_width: mq-get-breakpoint-width( wide );
+	.container {
+		width: $breakpoint_width;
+	}
+	@for $i from 1 through $columns {
+		.col-#{$breakpoint_prefix}-#{$i} {
+			flex-basis: ( ( 100% / $columns ) * $i );
+			max-width: ( ( 100% / $columns ) * $i );
+		}
+	}
+	@for $i from 0 through $columns {
+		.col-#{$breakpoint_prefix}-offset-#{$i} {
+			margin-left: ( ( 100% / $columns ) * $i );
+		}
+	}
+	.start-#{$breakpoint_prefix} {
+		justify-content: flex-start;
+		text-align: start;
+	}
+	.center-#{$breakpoint_prefix} {
+		justify-content: center;
+		text-align: center;
+	}
+	.end-#{$breakpoint_prefix} {
+		justify-content: flex-end;
+		text-align: end;
+	}
+	.top-#{$breakpoint_prefix} {
+		align-items: flex-start;
+	}
+	.middle-#{$breakpoint_prefix} {
+		align-items: center;
+	}
+	.bottom-#{$breakpoint_prefix} {
+		align-items: flex-end;
+	}
+	.around-#{$breakpoint_prefix} {
+		justify-content: space-around;
+	}
+	.between-#{$breakpoint_prefix} {
+		justify-content: space-between;
+	}
+	.first-#{$breakpoint_prefix} {
+		order: -1;
+	}
+	.last-#{$breakpoint_prefix} {
+		order: 1;
+	}
+}
