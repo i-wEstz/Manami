@@ -111,7 +111,7 @@ add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
 		}
 	}
 	add_action( 'woocommerce_before_main_content', 'manami_banner_image', 15 );
-	add_action( 'woocommerce_before_cart', 'manami_banner_image', 1 );
+	//add_action( 'woocommerce_before_cart', 'manami_banner_image', 1 );
 	
 	// Breadcrumb
 	function manami_breadcrumb() {
