@@ -13,6 +13,7 @@
 @import 'variables';
 @import 'animation';
 @import 'fonts';
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 /**
  * Global styles
@@ -582,7 +583,7 @@ p.demo_store,
         border-radius: 3px;
         left: auto;
         color: $secondarytext;
-        background-color: $secondary;
+        background-color: pink;
         border: 0;
         white-space: nowrap;
         display: inline-block;
@@ -617,8 +618,8 @@ p.demo_store,
             color: $secondarytext;
         }
         &.alt {
-            background-color: $primary;
-            color: $primarytext;
+           /* background-color: pink;*/
+            color: white;
             -webkit-font-smoothing: antialiased;
             &:hover {
                 background-color: white;
@@ -909,6 +910,7 @@ p.demo_store,
         th {
             font-weight: 700;
             padding: 9px 12px;
+            //background:white;
         }
         tr.woocommerce-cart-form__cart-item {
             background: white;
@@ -917,6 +919,7 @@ p.demo_store,
             /*border-top: 1px solid rgba(0, 0, 0, 0.1);*/
             padding: 6px 12px;
             vertical-align: middle;
+            background: rgba(255, 255, 255, 0.63);
             small {
                 font-weight: normal;
             }
@@ -936,6 +939,13 @@ p.demo_store,
         tbody th {
             font-weight: 700;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
+            //background: white;
+        }
+        tfoot tr {
+            th {
+                background: rgba(255, 255, 255, 0.63);
+                //background:white;
+            }
         }
     }
     table.my_account_orders {
@@ -1099,6 +1109,31 @@ p.demo_store,
         label.inline {
             display: inline;
         }
+        &.create-account {
+            label{
+            
+           /* &::before{
+                font-family: FontAwesome;
+                display: inline-block;
+                content: "\f204";
+                letter-spacing: 10px;
+            }*/
+            input[type=checkbox]{
+                display:none;
+            }
+            input[type=checkbox] ~ &::before{
+                 font-family: FontAwesome;
+                display: inline-block;
+                content: "\f204";
+                letter-spacing: 10px;
+            }
+            input[type=checkbox]:checked ~ &::before{
+                content: "\f205"; color:green;
+                letter-spacing: 10px;
+            }
+            } 
+            
+        }
         select {
             cursor: pointer;
             margin: 0;
@@ -1121,6 +1156,8 @@ p.demo_store,
             margin: 0;
             outline: 0;
             line-height: 1;
+            border: 0;
+            padding: 0.5rem 1rem;
         }
         textarea {
             height: 4em;
@@ -1151,22 +1188,26 @@ p.demo_store,
         }
          ::-webkit-input-placeholder {
             line-height: normal;
+            color: pink;
         }
          :-moz-placeholder {
             line-height: normal;
+            color: pink;
         }
          :-ms-input-placeholder {
             line-height: normal;
+            color: pink;
         }
     }
     form.login,
     form.checkout_coupon,
     form.register {
-        border: 1px solid darken( $secondary, 10%);
+        /* border: 1px solid darken( $secondary, 10%);*/
         padding: 20px;
         margin: 2em 0;
         text-align: left;
         border-radius: 5px;
+        background: rgba(255, 255, 255, 0.63);
     }
     ul#shipping_method {
         list-style: none outside;
@@ -1190,6 +1231,10 @@ p.demo_store,
     }
     p.woocommerce-shipping-contents {
         margin: 0;
+    }
+    p.lost_password a {
+        color: black;
+        font-style: italic;
     }
     /**
 	 * Order page
@@ -1455,9 +1500,9 @@ button.pswp__button--zoom:hover {
 }
 
 .woocommerce-info {
-    border-top-color: #1e85be;
+    border-top-color: pink;
     &::before {
-        color: #1e85be;
+        color: pink;
     }
 }
 
@@ -1582,7 +1627,8 @@ button.pswp__button--zoom:hover {
             margin-bottom: 1em;
             font-size: 1.25em;
             padding: 1em;
-            background-color: transparent;
+            /*background-color: transparent;*/
+            background-color: black;
             font-family: "Varela Round", "Prompt", sans-serif;
             border: 1px solid #fff;
             text-transform: uppercase;
@@ -1655,6 +1701,9 @@ button.pswp__button--zoom:hover {
             }
             .notes {
                 clear: left;
+                background: rgba(255, 255, 255, 0.63);
+                padding: 5px 10px 10px 10px;
+                border-radius: 5px;
             }
             .form-row-first {
                 clear: left;
@@ -1709,6 +1758,9 @@ button.pswp__button--zoom:hover {
         }
         div.form-row {
             padding: 1em;
+            input.button.alt{
+                    color:black;
+            }
         }
         div.payment_box {
             position: relative;
@@ -1920,4 +1972,17 @@ body:not( .search-results) .twentysixteen .entry-summary {
 .twentysixteen .price ins {
     background: inherit;
     color: inherit;
+}
+
+
+/**
+*Additional Class 
+*/
+
+.woocommerce-billing-fields {
+    &__field-wrapper {
+        background: rgba(255, 255, 255, 0.63);
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+    }
 }
