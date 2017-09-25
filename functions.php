@@ -71,9 +71,11 @@
 	//Register WooCommerce Custom Style Kritchapon.C 21Sep2017
 	function wp_enqueue_woocommerce_style(){
 	wp_register_style( 'manami-woocommerce', get_template_directory_uri() . '/woocommerce/assets/css/woocommerce.css' );
+	wp_register_style( 'manami-woocommerce-select2', get_template_directory_uri() . '/woocommerce/assets/css/select2.css' );
 	
 	if ( class_exists( 'woocommerce' ) ) {
 		wp_enqueue_style( 'manami-woocommerce' );
+		wp_enqueue_style( 'manami-woocommerce-select2' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );

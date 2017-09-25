@@ -1736,8 +1736,7 @@ ul.products {
   padding: 0; }
 
 .woocommerce-message {
-  background-color: #f4b0b4;
-  padding: 1rem 2rem;
+  background-color: white;
   margin: 1rem 0; }
   .woocommerce-message a.wc-forward {
     float: right; }

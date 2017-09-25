@@ -13,6 +13,7 @@
 @import 'variables';
 @import 'animation';
 @import 'fonts';
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 /**
  * Global styles
@@ -582,7 +583,7 @@ p.demo_store,
         border-radius: 3px;
         left: auto;
         color: $secondarytext;
-        background-color: $secondary;
+        background-color: pink;
         border: 0;
         white-space: nowrap;
         display: inline-block;
@@ -617,8 +618,8 @@ p.demo_store,
             color: $secondarytext;
         }
         &.alt {
-            background-color: $primary;
-            color: $primarytext;
+            /* background-color: pink;*/
+            color: white;
             -webkit-font-smoothing: antialiased;
             &:hover {
                 background-color: white;
@@ -909,6 +910,12 @@ p.demo_store,
         th {
             font-weight: 700;
             padding: 9px 12px;
+            //background:white;
+        }
+        th.product-name::before {
+            content: "\f07a";
+            font-family: FontAwesome;
+            letter-spacing: 10px;
         }
         tr.woocommerce-cart-form__cart-item {
             background: white;
@@ -917,6 +924,7 @@ p.demo_store,
             /*border-top: 1px solid rgba(0, 0, 0, 0.1);*/
             padding: 6px 12px;
             vertical-align: middle;
+            background: rgba(255, 255, 255, 0.63);
             small {
                 font-weight: normal;
             }
@@ -936,6 +944,13 @@ p.demo_store,
         tbody th {
             font-weight: 700;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
+            //background: white;
+        }
+        tfoot tr {
+            th {
+                background: rgba(255, 255, 255, 0.63);
+                //background:white;
+            }
         }
     }
     table.my_account_orders {
@@ -1092,12 +1107,43 @@ p.demo_store,
         }
         label {
             line-height: 2;
+            input {
+                display: none;
+            }
+            input~span::before {
+                font-family: FontAwesome;
+                display: inline-block;
+                content: "\f096";
+                letter-spacing: 10px;
+            }
+            input:checked~span::before {
+                content: "\f046";
+                letter-spacing: 10px;
+            }
         }
         label.hidden {
             visibility: hidden;
         }
         label.inline {
             display: inline;
+        }
+        &.create-account {
+            label {
+                font-size: 1.3em;
+                input {
+                    display: none;
+                }
+                input~span::before {
+                    font-family: FontAwesome;
+                    display: inline-block;
+                    content: "\f096";
+                    letter-spacing: 10px;
+                }
+                input:checked~span::before {
+                    content: "\f046";
+                    letter-spacing: 10px;
+                }
+            }
         }
         select {
             cursor: pointer;
@@ -1121,6 +1167,8 @@ p.demo_store,
             margin: 0;
             outline: 0;
             line-height: 1;
+            border: 0;
+            padding: 0.5rem 1rem;
         }
         textarea {
             height: 4em;
@@ -1151,22 +1199,26 @@ p.demo_store,
         }
          ::-webkit-input-placeholder {
             line-height: normal;
+            color: pink;
         }
          :-moz-placeholder {
             line-height: normal;
+            color: pink;
         }
          :-ms-input-placeholder {
             line-height: normal;
+            color: pink;
         }
     }
     form.login,
     form.checkout_coupon,
     form.register {
-        border: 1px solid darken( $secondary, 10%);
+        /* border: 1px solid darken( $secondary, 10%);*/
         padding: 20px;
         margin: 2em 0;
         text-align: left;
         border-radius: 5px;
+        background: rgba(255, 255, 255, 0.63);
     }
     ul#shipping_method {
         list-style: none outside;
@@ -1191,6 +1243,10 @@ p.demo_store,
     p.woocommerce-shipping-contents {
         margin: 0;
     }
+    p.lost_password a {
+        color: black;
+        font-style: italic;
+    }
     /**
 	 * Order page
 	 */
@@ -1198,6 +1254,8 @@ p.demo_store,
         @include clearfix();
         margin: 0 0 3em;
         list-style: none;
+        background: white;
+        padding: 10px 5px 5px 10px;
         li {
             float: left;
             margin-right: 2em;
@@ -1455,9 +1513,9 @@ button.pswp__button--zoom:hover {
 }
 
 .woocommerce-info {
-    border-top-color: #1e85be;
+    border-top-color: pink;
     &::before {
-        color: #1e85be;
+        color: pink;
     }
 }
 
@@ -1542,6 +1600,21 @@ button.pswp__button--zoom:hover {
         td.product-price {
             color: black;
         }
+        th.product-price::before {
+            content: "\f155";
+            font-family: FontAwesome;
+            letter-spacing: 10px;
+        }
+        th.product-quantity::before {
+            content: "\f187";
+            font-family: FontAwesome;
+            letter-spacing: 10px;
+        }
+        th.product-subtotal::before {
+            content: "\f1ce";
+            font-family: FontAwesome;
+            letter-spacing: 10px;
+        }
         td.actions .coupon .input-text {
             float: left;
             box-sizing: border-box;
@@ -1582,9 +1655,10 @@ button.pswp__button--zoom:hover {
             margin-bottom: 1em;
             font-size: 1.25em;
             padding: 1em;
-            background-color: transparent;
+            /*background-color: transparent;*/
+            background-color: #ed798f;
             font-family: "Varela Round", "Prompt", sans-serif;
-            border: 1px solid #fff;
+            //border: 2px solid #fff;
             text-transform: uppercase;
         }
     }
@@ -1655,6 +1729,9 @@ button.pswp__button--zoom:hover {
             }
             .notes {
                 clear: left;
+                background: rgba(255, 255, 255, 0.63);
+                padding: 5px 10px 10px 10px;
+                border-radius: 5px;
             }
             .form-row-first {
                 clear: left;
@@ -1709,6 +1786,9 @@ button.pswp__button--zoom:hover {
         }
         div.form-row {
             padding: 1em;
+            input.button.alt {
+                color: black;
+            }
         }
         div.payment_box {
             position: relative;
@@ -1920,4 +2000,51 @@ body:not( .search-results) .twentysixteen .entry-summary {
 .twentysixteen .price ins {
     background: inherit;
     color: inherit;
+}
+
+
+/**
+*Additional Class 
+*/
+
+.woocommerce-billing-fields {
+    &__field-wrapper {
+        background: rgba(255, 255, 255, 0.63);
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+    }
+}
+
+.woocommerce-order-details {
+    h2 {
+        color: white;
+    }
+    table {
+        th {
+            //background: white;
+        }
+        td {
+            // background: white;
+            a {
+                color: black;
+            }
+        }
+        td.product-name {
+            //background: white;
+        }
+    }
+}
+
+.woocommerce-order {
+    p {
+        color: white;
+    }
+}
+
+.create-account {
+    p {
+        background: rgba(255, 255, 255, 0.63);
+        padding: 5px 10px 10px 10px !important;
+        border-radius: 5px;
+    }
 }
