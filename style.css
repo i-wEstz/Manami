@@ -975,7 +975,10 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 99; }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Varela Round", "Prompt", sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase; }
@@ -1127,7 +1130,7 @@ section {
   .site_header .topbar {
     background-color: #fff;
     text-align: center;
-    padding: 0.6rem 0;
+    padding: 0.5rem 0;
     letter-spacing: 1px; }
     .site_header .topbar__message {
       font-size: 0.8rem;
@@ -1456,7 +1459,7 @@ section {
   box-sizing: border-box; }
   @media all and (min-width: 64em) {
     .knowledge__spacer {
-      height: calc( 100vh - 60px ); } }
+      height: calc( 100vh - 60px); } }
 
 .section_newsletter {
   background-color: #f4b0b4;
@@ -1525,10 +1528,10 @@ section {
   overflow: hidden; }
   .instagram__wrapper a {
     float: left;
-    width: calc( 100% / 4 ); }
+    width: calc( 100% / 4); }
     @media all and (min-width: 32em) {
       .instagram__wrapper a {
-        width: calc( 100% / 8 ); } }
+        width: calc( 100% / 8); } }
   .instagram__wrapper img {
     display: block; }
 
@@ -1595,8 +1598,43 @@ body.page-about-us .site_content {
     .about_page__content h3 {
       font-size: 24px; } }
 
+body.page-checkout .site_content {
+  /*background: $color_pink url(img/bg-about-us.jpg) no-repeat center center / cover;*/
+  background: #f4b0b4;
+  padding: 10rem 0 0; }
+  @media (max-width: 46.24em) {
+    body.page-checkout .site_content {
+      padding: 60px 0 0; } }
+
+.checkout_page__wrapper {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto; }
+.checkout_page__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 400;
+  color: white;
+  margin: 0 0 1em; }
+  @media (max-width: 46.24em) {
+    .checkout_page__title {
+      font-size: 36px; } }
+.checkout_page__content img {
+  display: block; }
+.checkout_page__content h3 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: white; }
+  @media (max-width: 46.24em) {
+    .checkout_page__content h3 {
+      font-size: 24px; } }
+
 body.page-cart .site_content {
-  background: #ed798f url(img/bg-about-us.jpg) no-repeat center center/cover;
+  /*background: $color_pink url(img/bg-about-us.jpg) no-repeat center center / cover;*/
+  background: #f4b0b4;
   padding: 10rem 0 0; }
   @media (max-width: 46.24em) {
     body.page-cart .site_content {
@@ -1611,6 +1649,7 @@ body.page-cart .site_content {
   text-transform: uppercase;
   font-size: 48px;
   font-weight: 400;
+  color: white;
   margin: 0 0 1em; }
   @media (max-width: 46.24em) {
     .cart_page__title {
